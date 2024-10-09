@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transaction Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1 class="dashboard-title">Transaction Dashboard</h1>
+        <div class="controls">
+            <div class="search-container">
+                <input type="text" id="search-box" placeholder="Search transaction" />
+                <button id="search-button">Search</button>
+            </div>
+            <div class="month-select">
+                <label for="month-select">Select Month:</label>
+                <select id="month-select">
+                    <option value="01">January</option>
+                    <option value="02">February</option>
+                    <option value="03" selected>March</option>
+                    <option value="04">April</option>
+                    <option value="05">May</option>
+                    <option value="06">June</option>
+                    <option value="07">July</option>
+                    <option value="08">August</option>
+                    <option value="09">September</option>
+                    <option value="10">October</option>
+                    <option value="11">November</option>
+                    <option value="12">December</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="pagination">
+            <span>Page No: <span id="current-page">1</span></span>
+            <button id="previous-button">Previous</button>
+            <button id="next-button">Next</button>
+            <span>Per Page: 10</span>
+        </div>
+
+        <table id="transaction-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Title</th>
+                    <th>Description</th>
+                    <th>Price</th>
+                    <th>Category</th>
+                    <th>Sold</th>
+                    <th>Image</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Transactions will be populated here -->
+            </tbody>
+        </table>
+
+        <h2>Transaction Statistics</h2>
+        <div id="statistics">
+            <div id="total-sale"></div>
+            <div id="sold-items"></div>
+            <div id="not-sold-items"></div>
+        </div>
+
+        <h2>Transaction Bar Chart</h2>
+        <canvas id="barChart" width="400" height="200"></canvas>
+
+        <h2>Transaction Pie Chart</h2>
+        <canvas id="pieChart" width="400" height="200"></canvas>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
